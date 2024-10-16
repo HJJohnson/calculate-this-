@@ -48,34 +48,34 @@ export default function App() {
     // Define sound for each digit
     switch (digit) {
       case '0':
-        await soundObject.loadAsync(require('./assets/sounds/meme0.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/black.mp3'));
         break;
       case '1':
-        await soundObject.loadAsync(require('./assets/sounds/meme1.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/fuck.mp3'));
         break;
       case '2':
-        await soundObject.loadAsync(require('./assets/sounds/meme2.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/monkey.mp3'));
         break;
       case '3':
-        await soundObject.loadAsync(require('./assets/sounds/meme3.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/rickroll.mp3'));
         break;
       case '4':
-        await soundObject.loadAsync(require('./assets/sounds/meme4.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/tit.mp3'));
         break;
       case '5':
-        await soundObject.loadAsync(require('./assets/sounds/meme5.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/black.mp3'));
         break;
       case '6':
-        await soundObject.loadAsync(require('./assets/sounds/meme6.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/fuck.mp3'));
         break;
       case '7':
-        await soundObject.loadAsync(require('./assets/sounds/meme7.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/monkey.mp3'));
         break;
       case '8':
-        await soundObject.loadAsync(require('./assets/sounds/meme8.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/rickroll.mp3'));
         break;
       case '9':
-        await soundObject.loadAsync(require('./assets/sounds/meme9.mp3'));
+        await soundObject.loadAsync(require('./assets/sound/tit.mp3'));
         break;
       default:
         await soundObject.loadAsync(require('./assets/sounds/default.mp3'));
@@ -89,27 +89,27 @@ export default function App() {
   const getMemeImage = (digit) => {
     switch (digit) {
       case '0':
-        return require('./assets/wernest.jpeg');
+        return require('./assets/image/meme05.png');
       case '1':
-        return require('./assets/poo.jpeg');
+        return require('./assets/image/meme16.jpeg');
       case '2':
-        return require('./assets/middlefinger.jpeg');
+        return require('./assets/image/meme27.jpeg');
       case '3':
-        return require('./assets/rickroll.webp');
+        return require('./assets/image/meme38.webp');
       case '4':
-        return require('./assets/boobs.jpeg');
+        return require('./assets/image/meme49.jpeg');
       case '5':
-        return require('./assets/poo.jpeg');
+        return require('./assets/image/meme05.png');
       case '6':
-        return require('./assets/middlefinger.jpeg');
+        return require('./assets/image/meme16.jpeg');
       case '7':
-        return require('./assets/rickroll.webp');
+        return require('./assets/image/meme27.jpeg');
       case '8':
-        return require('./assets/boobs.jpeg');
+        return require('./assets/image/meme38.webp');
       case '9':
-        return require('./assets/wernest.jpeg');
+        return require('./assets/image/meme49.jpeg');
       default:
-        return require('./assets/default');
+        return require('./assets/image/default.jpeg');
     }
   };
 
