@@ -1,0 +1,83 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React Native
+.expo/
+.expo-shared/
+build/
+android/.gradle/
+android/app/build/
+android/.idea/
+ios/Pods/
+ios/build/
+
+# macOS
+.DS_Store
+
+# Logs
+logs
+.log
+yarn-debug.log
+yarn-error.log*
+npm-debug.log*
+
+# Temporary files
+tmp/
+temp/
+
+# Metro Bundler
+.cache/
+.expo/
+dist/
+
+# Babel and ESLint
+babel.config.js
+.eslintcache
+
+# Jest coverage and cache
+/coverage/
+/jest-cache/
+/jest-temp/
+
+# Storybook
+storybook-static/
+
+# TypeScript
+.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.test
+.env..local
+
+IDE files
+.vscode/
+.idea/
+*.iml
+
+# Lock files (optional, depending on your workflow)
+package-lock.json
+yarn.lock
+
+# Android
+android/.cxx/
+android/local.properties
+
+# iOS
+ios/.generated/
+xcuserdata/
+*.pbxuser
+*.mode1v3
+.mode2v3
+
+# Expo/Metro cache and assets
+.expo/
+.expo-shared/
+assets/
+# NEW
+
+# Message @Kenli Shaw
