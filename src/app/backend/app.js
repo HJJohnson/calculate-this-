@@ -15,7 +15,7 @@ export default function App() {
   const [lastDigit, setLastDigit] = useState(null);
   const [result, setResult] = useState(null);
 
-  // Function to handle button presses
+  // BUTTON PRESS FUNCTIONALITY
   const handlePress = (value) => {
     if (value === 'C') {
       setDisplay('0');
@@ -28,24 +28,24 @@ export default function App() {
     }
   };
 
-  // Function to calculate the result
+  // CALCULATES RESULT
   const calculateResult = () => {
     try {
-      const calcResult = eval(display); // Use eval to compute the math expression
+      const calcResult = eval(display); // EVALUATES MATH EXPRESSION
       setResult(calcResult);
-      const lastNum = calcResult.toString().slice(-1); // Get the last digit of the result
+      const lastNum = calcResult.toString().slice(-1); // GETS LAST DIGIT
       setLastDigit(lastNum);
-      playMeme(lastNum); // Play meme based on the last digit
+      playMeme(lastNum); // PLAY MEME BASED ON LAST DIGIT
     } catch (error) {
       setDisplay('Error');
     }
   };
 
-  // Function to play the corresponding meme based on last digit
+  // PLAYS MEME BASED ON THE LAST DIGIT
   const playMeme = async (digit) => {
     let soundObject = new Audio.Sound();
 
-    // Define sound for each digit
+    // SOUND FOR EACH DIGIT
     switch (digit) {
       case '0':
         await soundObject.loadAsync(require('./assets/sound/black.mp3'));
@@ -85,7 +85,7 @@ export default function App() {
     await soundObject.playAsync();
   };
 
-  // Function to get the meme image based on the last digit
+  // IMAGE FOR EACH DIGIT
   const getMemeImage = (digit) => {
     switch (digit) {
       case '0':
@@ -133,7 +133,7 @@ export default function App() {
       ))}
       {lastDigit !== null && (
         <Image
-          source={getMemeImage(lastDigit)} // Load corresponding image based on last digit
+          source={getMemeImage(lastDigit)} //LOAD MEME BASED ON LAST DIGIT
           style={styles.memeImage}
         />
       )}

@@ -7,10 +7,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-// Serve static files (images and sounds) from the /assets folder
+// SERVER IMAGE/SOUND STATIC FILES
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
 
-// this is our calculator logic boom!!
+// THIS IS OUR CALCULATOR LOGIC!!! BOOM!!
 app.get('/calculate', (req, res) => {
     const { expression } = req.query; 
 
@@ -23,22 +23,22 @@ app.get('/calculate', (req, res) => {
     }
 });
 
-
+// REQUEST AND RESPONSE FOR MEME/ SOUND
 app.get('/meme', (req, res) => {
     const { digit } = req.query;
 
     
     const memes = {
-        '0': { image: '/assets/images/meme0.png', sound: '/assets/sounds/meme0.mp3' },
-        '1': { image: '/assets/images/meme1.png', sound: '/assets/sounds/meme1.mp3' },
-        '2': { image: '/assets/images/meme2.png', sound: '/assets/sounds/meme2.mp3' },
-        '3': { image: '/assets/images/meme3.png', sound: '/assets/sounds/meme3.mp3' },
-        '4': { image: '/assets/images/meme4.png', sound: '/assets/sounds/meme4.mp3' },
-        '5': { image: '/assets/images/meme5.png', sound: '/assets/sounds/meme5.mp3' },
-        '6': { image: '/assets/images/meme6.png', sound: '/assets/sounds/meme6.mp3' },
-        '7': { image: '/assets/images/meme7.png', sound: '/assets/sounds/meme7.mp3' },
-        '8': { image: '/assets/images/meme8.png', sound: '/assets/sounds/meme8.mp3' },
-        '9': { image: '/assets/images/meme9.png', sound: '/assets/sounds/meme9.mp3' },
+        '0': { image: '/assets/images/meme05.png', sound: '/assets/sounds/black.mp3' },
+        '1': { image: '/assets/images/meme16.jpeg', sound: '/assets/sounds/fuck.mp3' },
+        '2': { image: '/assets/images/meme27.jpeg', sound: '/assets/sounds/monkey.mp3' },
+        '3': { image: '/assets/images/meme38.webp', sound: '/assets/sounds/rickroll.mp3' },
+        '4': { image: '/assets/images/meme49.jpeg', sound: '/assets/sounds/tit.mp3' },
+        '5': { image: '/assets/images/meme05.png', sound: '/assets/sounds/black.mp3' },
+        '6': { image: '/assets/images/meme16.jpeg', sound: '/assets/sounds/fuck.mp3' },
+        '7': { image: '/assets/images/meme27.jpeg', sound: '/assets/sounds/monkey.mp3' },
+        '8': { image: '/assets/images/meme38.webp', sound: '/assets/sounds/rickroll.mp3' },
+        '9': { image: '/assets/images/meme49.jpeg', sound: '/assets/sounds/tit.mp3' },
     };
 
     const meme = memes[digit] || memes['0']; 
