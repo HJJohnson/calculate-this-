@@ -1,0 +1,48 @@
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react-native';
+import Calculator from '../app/frontend/src/components/navigation/Calculator'; // Adjust the import path as needed
+
+describe('Calculator App', () => {
+  let getByTestId: (testId: string) => any;
+
+  beforeEach(() => {
+    const { getByTestId: localGetByTestId } = render(<Calculator />);
+    getByTestId = localGetByTestId;
+  });
+
+  it('should render calculator interface with number buttons', () => {
+    for (let i = 0; i <= 9; i++) {
+      expect(getByTestId(`button-${i}`)).toBeTruthy();
+    }
+    expect(getByTestId('button-add')).toBeTruthy();
+    expect(getByTestId('button-equal')).toBeTruthy();
+  });
+
+  it('should display an image when a number button is clicked', () => {
+    fireEvent.press(getByTestId('button-5'));
+    expect(getByTestId('image-5')).toBeTruthy();
+  });
+
+  it('should display an image when an operator button is clicked', () => {
+    fireEvent.press(getByTestId('button-add'));
+    expect(getByTestId('image-add')).toBeTruthy();
+  });
+
+  it('should hide previous image when a new button is clicked', () => {
+    fireEvent.press(getByTestId('button-5'));
+    expect(getByTestId('image-5')).toBeTruthy();
+    
+    fireEvent.press(getByTestId('button-3'));
+    expect(() => getByTestId('image-5')).toThrow();
+    expect(getByTestId('image-3')).toBeTruthy();
+  });
+
+  it('should calculate the result when pressing numbers and operator', () => {
+    fireEvent.press(getByTestId('button-5'));
+    fireEvent.press(getByTestId('button-add'));
+    fireEvent.press(getByTestId('button-3'));
+    fireEvent.press(getByTestId('button-equal'));
+
+    expect(getByTestId('display')).toHaveTextContent('8'); // Assuming 5 + 3 = 8
+  });
+});
